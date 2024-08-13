@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="">
+
+        <div class="w-[720px] h-[700px]  border mx-auto my-[5rem]  py-[2rem] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
+        <h1 class="text-5xl font-serif text-center font-bold my-4" > Register page</h1>
+
+        <form action="/register" method="POST" class=" flex flex-col gap-2 mx-3 my-[5rem]">
+            {{form.hidden_tag()}}
+            <div class="  text-3xl flex gap-10 font-semibold text-white ml-5">
+                {{ form.name.label( for="name")}}
+                {{ form.name( id="name" ,class="w-[350px] rounded-lg ml-4  py-2 text-black")}}
+
+                {% if form.name.errors %}
+                <ul class="text-red-700">
+                    {% for error in form.name.errors %}
+                    <li >{{ error( class="text-red-600 font-bold") }}</li>
+                    {% endfor %}
+
+                </ul>
+
+                {% endif %}
+            </div>
+            <div class=" text-3xl flex gap-10 my-3 font-semibold text-white ml-5 mt-5">
+                {{ form.email.label( for="email")}}
+                {{ form.email( id="email" ,class="w-[350px] rounded-lg ml-5 py-2  text-black")}}
+
+                {% if form.email.errors %}
+                <ul>
+                    {% for error in form.email.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+
+                </ul>
+
+                {% endif %}
+            </div>
+            <div class="text-3xl flex gap-8 my-3 font-semibold text-white mt-5">
+                {{ form.password.label( for="password")}}
+                {{ form.password( id="password" ,class="bg-blue-500 rounded-lg w-[350px] py-2 text-black")}}
+
+                {% if form.password.errors %}
+                <ul>
+                    {% for error in form.password.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+
+                </ul>
+
+                {% endif %}
+            </div>
+            <div class="flex gap-[2rem] w-[350px] mx-auto">
+                
+
+                    {{ form.submit( class=" w-[120px] h-[55px] text-2xl bg-blue-700 text-white rounded-lg my-[3rem]")}}
+                <a href="/login" class="my-[3rem] bg-yellow-400 text-black text-2xl w-[120px] h-[55px] pt-3 underline px-7 rounded-lg">Login</a>
+                
+                
+            </div>
+           
+        </form>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+
+    <style>
+        .contactus-section{
+    /* width: 100vh; */
+    background-color: rgb(231,231,231);
+}
+.contact-container{
+    margin:4rem auto;
+    width: 1200px;
+}
+.contact-heading{
+    
+    font-size: 6rem;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #e84949;
+    font-weight:bold
+}
+
+.contact-subheading{
+    font-size:2.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#1f1f1f;
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+}
+.form-container{
+    /* display: flex; */
+    margin:4rem auto;
+    margin-bottom:0px;
+    position: relative;
+    left: 10%;
+    
+    
+}
+.formzz{
+    display: flex;
+    /* margin-top:2rem; */
+    flex-direction: column;
+    padding-bottom: 2rem;
+    
+
+}
+
+.space1{
+    width: 80%;
+    padding:10px 10px;
+    font-size: 1.2rem;
+    margin-top:1.5rem;
+     filter: drop-shadow(0 0 5px #333);
+     
+     /* box-shadow: 0px 0px 5px  #333; */
+    border-radius: 4px;
+    border: none;
+}
+    </style>
+</head>
+<body>
+    <div class="contactus-section " id="contact">
+
+        <div class="contact-container">
+
+          <div class="contact-heading">Contact us</div>
+
+          <div class="contact-subheading">Questions, Thoughts, Or Just Want To Say Hello?</div>
+
+          <div class="form-container">
+            <form action="" class="formzz">
+
+              <input type="text" placeholder="Enter your name" class="space1">
+
+              <input type="email" placeholder="Enter your email" class="space1">
+
+              <input type="text"placeholder="subject" class="space1">
+
+              <textarea name="" id="" cols="30" rows="10" class="space1" placeholder="" ></textarea>
+
+
+
+            </form>
+
+            
+          </div>
+
+
+
+
+    </div>
+
+</body>
+</html>

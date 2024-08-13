@@ -1,0 +1,416 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Document</title>
+
+    <style>
+
+.project-container{
+   margin: 3rem auto;
+   width: 1200px;
+   padding: 3rem 0;
+   display: flex;
+   flex-direction: column;
+   gap:120px;
+
+}
+       
+       .project-card{
+    width: 90%;
+    height: 550px;
+    background-image: url(./project/Project1.png);
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+}
+.project-card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    background-color: #1f1f1f9a;
+    z-index: 0;
+}
+.project-card::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background: linear-gradient(45deg,#343d68,#343d68be,#343d687c);
+    transform: scaleX(0);
+    transform-origin:left ;
+    transition:  all 1s;
+     z-index: 1;
+}
+
+.project-card:hover::before{
+    transform:scaleX(1);
+}
+
+.project-number{
+    position:absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color:white;
+    z-index: 10;
+    /* display: none; */
+    opacity: 0;
+}
+.project-card:hover .project-number {
+    opacity: 1;
+}
+.number-left{
+    left: -20px;
+    top:-45px
+}
+.number-right{
+    right:30px;
+    top:-45px
+}
+.project-card:hover .project-content{
+    transform: scale(1.1);
+}
+
+.project-content{
+
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    padding: 2em;
+    bottom:20%;
+    z-index:5;
+    gap:1em;
+    transition: all 0.4s;
+}
+
+
+.content-left{
+    left:10%;
+}
+
+.content-right{
+    right:10%;
+}
+
+.skills-container{
+ 
+    width: 60%;
+    display: flex;
+    gap:10px;
+    flex-wrap:wrap;
+
+}
+
+.project-skills{
+ width:40px;
+ z-index: 9;
+}
+
+.project-heading{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem;
+
+}
+.project-sub-heading{
+    width:70%;
+    font-size: 16px;
+    font-style:italic;
+
+}
+.card1{
+    background-image: url(https://media.geeksforgeeks.org/wp-content/cdn-uploads/20201111215809/How-to-Become-a-Front-End-Developer-in-2020.png);
+
+}
+
+.card2{
+    background-image: url(https://www.creativeitinstitute.com/images/course/course_1662637290.jpg);
+    margin-left: 120px;
+}
+.card3{
+    background-image: url(https://oilab.in/public/img/courses/full-stack-web-developer.jpg);
+}
+
+.card4{
+    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20230911132318/Best-Backend-Development-Courses.png);
+    margin-left: 120px;
+}
+
+.btn-grp{
+    display: flex;
+    gap:0.9rem;
+    align-items: center;
+
+}
+
+
+
+.btn-project:hover{
+    border:none;
+}
+
+.project-main-heading{
+    color:#e84949;
+    font-size:90px;
+    text-align:center;
+    padding-top: 30px ;
+
+}
+
+
+
+
+    </style>
+    
+</head>
+<body>
+
+    <!-- <h1 class="bg-red">hello world</h1> -->
+
+    <div class="project-container">
+        
+        <h2 class="project-main-heading  font-bold drop-shadow-2xl">
+            Our Current courses
+        </h2>
+
+    <div class="project-card card1">
+        <div class="project-number number-left">01</div>
+        <div class="project-content content-left">
+
+            <div class="skills-container">
+
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/HTML.png"class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/CSS.png" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Github.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Next.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Docker.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Tailwind.png" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Javascript.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/React.png" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Bootstrap.svg" class="project-skills" alt="">
+
+
+            </div>
+
+            <h2 class="project-heading"> Frontend Developer Course  </h2>
+            <p class="project-sub-heading">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae, eveniet. </p>
+
+            <div class="btn-grp">
+             <button class="btn-project bg-red-600 my-2 px-7 py-1 text-xl font-semibold "><a href="https://www.youtube.com/watch?v=jBzwzrDvZ18">Start</a></button>
+             <a href="">
+                <!-- <i> </i> -->
+                <i class="fa-brands fa-github pic"></i>
+             </a>
+
+             <a href="">
+                <i class="fa-solid fa-link pic"></i>
+             </a>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- course 2 -->
+    <div class="project-card card2">
+        <div class="project-number number-right">02</div>
+        <div class="project-content content-right">
+
+            <div class="skills-container">
+
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Git.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/netlify.svg"  class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Github.svg"class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/K8s.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Bash.svg" class="project-skills" alt="">
+                <img src="" class="project-skills" alt="">
+                <img src="stack/MongoDB.svg" class="project-skills" alt="">
+                <img src="stack/Bash.svg" class="project-skills" alt="">
+                <img src="stack/Next.svg" class="project-skills" alt="">
+
+
+
+            </div>
+
+            <h2 class="project-heading"> UI-UX Design Course </h2>
+            <p class="project-sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, commodi. </p>
+
+            <div class="btn-grp">
+             <button class="btn-project btn-project bg-red-600 my-2 px-7 py-1 text-xl font-semibold">Read me</button>
+             <a href="">
+                <i class="fa-brands fa-github pic"></i>
+             </a>
+
+             <a href="">
+                <i class="fa-solid fa-link pic"></i>
+             </a>
+
+            </div>
+
+
+        </div>
+        
+
+
+    </div>
+
+    <!-- course 3 -->
+
+    <div class="project-card card3">
+        <div class="project-number number-left">03</div>
+        <div class="project-content content-left">
+
+            <div class="skills-container">
+
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/HTML.png"class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/CSS.png" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Github.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Javascript.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/MaterialUI.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Docker.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Bash.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/MongoDB.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/K8s.svg" class="project-skills" alt="">
+
+
+
+
+            </div>
+
+            <h2 class="project-heading"> Fullstack Developer Course  </h2>
+            <p class="project-sub-heading"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ipsam!</p>
+
+            <div class="btn-grp">
+             <button class="btn-project btn-project bg-red-600 my-2 px-7 py-1 text-xl font-semibold"><a href="https://www.youtube.com/watch?v=YLpCPo0FDtE&list=PL9ooVrP1hQOGTHk2auXsk3cyqRBbbsQ6l">Start</a></button>
+             <a href="">
+                <i class="fa-brands fa-github pic"></i>
+             </a>
+
+             <a href="">
+                <i class="fa-solid fa-link pic"></i>
+             </a>
+
+            </div>
+
+
+        </div>
+        
+
+
+    </div>
+     
+    <!-- course4 -->
+    <div class="project-card card4">
+        <div class="project-number number-right">04</div>
+        <div class="project-content content-right">
+
+            <div class="skills-container">
+
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Saas.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/ChartJs.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/netlify.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Git.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/MaterialUI.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Docker.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/Bash.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/MongoDB.svg" class="project-skills" alt="">
+                <img src="https://deepakrana07.github.io/portfolio-webpage/stack/K8s.svg" class="project-skills" alt="">
+
+
+            </div>
+
+            <h2 class="project-heading">Backend Development Courses </h2>
+            <p class="project-sub-heading">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, ullam. </p>
+
+            <div class="btn-grp">
+             <button class="btn-project btn-project bg-red-600 my-2 px-7 py-1 text-xl font-semibold"><a href="https://www.youtube.com/watch?v=zJSY8tbf_ys">Start</a></button>
+             <a href="">
+                <i class="fa-brands fa-github pic"></i>
+             </a>
+
+             <a href="">
+                <i class="fa-solid fa-link pic"></i>
+             </a>
+
+            </div>
+
+
+        </div>
+        
+
+
+    </div>
+
+
+                                                                                                                                                                                                                                     
+  </div>  
+
+  <!-- <footer></footer> -->
+  <div class="bg-gray-200">
+    <div class="w-[1100px] mx-auto py-[6rem]">
+        <div class="flex flex-row gap-[5.5rem]">
+            <div>
+                <img src="https://images.squarespace-cdn.com/content/v1/63fe7f9ad502034b00c213e2/28119b71-21b4-465b-a16d-b552f8567fbc/PastedGraphic-3+%282%29.png" class="w-[100px]" alt="">
+                <div class="w-[60px] h-1 bg-red-400 my-4"></div>
+
+                
+                <p class="w-[300px] my-5  font-ggSans">Registered as Hunger Heroes.
+
+                    Under Indian Society Registration Act XXI, 1860</p>
+                <p class="w-[300px]  font-ggSans">All donations are tax-exempted as eligible under section 80G of the Income Tax Act, 1961.</p>
+            </div>
+            <div class="flex flex-col gap-6">
+               <div>
+                <h1 class="text-2xl font-medium"> who we are</h1>
+                <div class="w-[50px] h-1 bg-red-400 my-2 "></div>
+               </div>
+                
+                <h1 class="text-xl"><i class="fa-solid fa-arrow-right fa"></i> Contact us</h1>
+                <h1 class="text-xl"><i class="fa-solid fa-arrow-right fa"></i> About us </h1>
+                <h1 class="text-xl"><i class="fa-solid fa-arrow-right fa"></i> Help us</h1>
+            </div>
+
+            <div class="flex flex-col gap-6">
+                <div>
+                    <h1 class="text-2xl font-medium ">Get involved</h1>
+                    <div class="w-[80px] h-1 bg-red-400 my-2"></div>
+                </div>
+               
+                <h1 class="text-xl"><i class="fa-solid fa-arrow-right fa"></i> Donate</h1>
+                <h1 class="text-xl"><i class="fa-solid fa-arrow-right fa"></i> Request for Food</h1>
+                <h1 class="text-xl"><i class="fa-solid fa-arrow-right fa"></i> Partner with us</h1>
+            </div>
+
+            <div>
+                <h1 class="text-2xl font-medium"> Socials</h1>
+                <div class="w-[80px] h-1 bg-red-400 my-2"></div>
+                <div class="my-5">
+
+                    <i class="fa-brands fa-instagram fa-2xl "></i>
+                    <i class="fa-brands fa-facebook fa-2xl mx-2"></i>
+                    <i class="fa-brands fa-google fa-2xl "></i>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+
+
+    
+    
+</body>
+</html>

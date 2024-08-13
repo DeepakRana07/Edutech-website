@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>Document</title>
+</head>
+<body> 
+ <div class="my-[6rem]" >
+    <div class="w-[600px] h-[600px] mx-auto bg-gradient-to-r from-violet-500 to-fuchsia-500 py-[3rem] rounded-xl shadow-2xl">
+    <h1 class=" text-5xl font-semibold font-serif text-center "> Login Page</h1>
+    <center>
+
+        <img src="https://simg.nicepng.com/png/small/136-1366211_group-of-10-guys-login-user-icon-png.png" class="w-[120px] h-[90px] rounded-full my-6 " alt="">
+
+    </center>
+    
+    {% with messages= get_flashed_messages()%}
+    {% if messages %}
+
+      <div class="alert alert-danger">
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    {% endwith %}
+
+
+
+
+
+
+
+
+    <form action="/login" method="POST" class=" pt-[1.7rem]">
+        {{form.hidden_tag()}}
+       
+        <div class=" text-3xl font-semibold my-4 mx-7">
+            {{ form.email.label( for="email")}} 
+            {{ form.email( id="email" ,class=" mx-5 shadow-2xl rounded-lg ")}}
+            
+            {% if form.email.errors %}
+                <ul>
+                     {% for error in form.email.errors %}
+                        <li>{{ error }}</li>
+                     {% endfor %}
+
+                </ul>
+
+            {% endif %}
+        </div>
+        <div class=" text-3xl font-semibold my-6 mx-7">
+            {{ form.password.label( for="password")}} 
+            {{ form.password( id="password" ,class=" shadow-2xl rounded-lg")}}
+            
+            {% if form.password.errors %}
+                <ul>
+                     {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                     {% endfor %}
+
+                </ul>
+
+            {% endif %}
+        </div>
+        <br>
+        <br>
+        {{ form.submit( class="bg-yellow-400  text-2xl font-semibold w-[130px] h-[50px]  mx-5 shadow-2xl rounded-lg  ")}}
+        <a href="/register" class="bg-red-600 w-[130px] h-[50px] mx-4 text-2xl px-4 py-2 shadow-2xl rounded-lg" >Register</a>
+    </form>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
